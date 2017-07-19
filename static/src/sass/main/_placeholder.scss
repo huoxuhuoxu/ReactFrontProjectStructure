@@ -1,0 +1,107 @@
+﻿
+%clearfix {
+    @include clearfix;
+}
+%clearboth {
+    @include clearboth;
+}
+
+%absolute {
+    @include absolute;  // left,top.
+}
+%absolute2 {
+    @include absolute2; // div direction.
+}
+%relative {
+    @include relative;
+}
+%fixed {
+    @include fixed;
+}
+
+%wh100 {
+    width: 100%;
+    height: 100%;
+}
+%w100 {
+    width: 100%;
+}
+%h100 {
+    height: 100%;
+}
+%f_left {
+    float: left;
+}
+%f_right {
+    float: right;
+}
+%o_hide {
+    overflow: hidden;
+}
+%o_auto {
+    overflow: auto;
+}
+
+%f_fw {
+    font-family: "黑体";
+}
+%f_fw2 {
+    font-family: "微软雅黑";
+}
+
+
+%f_12 {
+    font-size: 12px;
+}
+%f_13 {
+    font-size: 13px;
+}
+%f_14 {
+    font-size: 14px;
+}
+%f_15 {
+    font-size: 15px;
+}
+%f_16 {
+    font-size: 16px;
+}
+%f_17 {
+    font-size: 17px;
+}
+%f_18 {
+    font-size: 18px;
+}
+%f_24 {
+    font-size: 24px;
+}
+%ls_3 {
+    letter-spacing: 3px;
+}
+
+%center-block {
+    margin: 0 auto 0;
+}
+%center-block2 {
+    @include absolute(50%,50%);
+    @include transform(translate(-50%,-50%));
+}
+%text-align {
+    text-align: center;
+}
+%text-left {
+    text-align: left;
+}
+%text-right {
+    text-align: right;
+}
+
+%cursor-pointer {
+    cursor: pointer;
+}
+
+%word-break {
+    word-break: break-all;
+    word-wrap: break-word;
+}
+
+

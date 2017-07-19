@@ -1,0 +1,411 @@
+﻿/* initial */
+@mixin initial(){
+    * {
+        box-sizing: border-box;
+    }
+    li {
+        list-style: none;
+    }
+    a,a:link,a:hover,a:active,a:visited {
+        text-decoration: none;
+    }
+    a:focus,button:focus {
+        outline: none;
+    }
+    body {
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+    }
+}
+
+@mixin a_initial($color: #000, $color2: #000){
+    a,a:link,a:active,a:visited {
+        color: $color;
+    }
+    a:hover {
+        color: $color2;
+    }
+}
+
+@mixin iphone_initial(){
+    * {
+        -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+        -webkit-touch-callout: none;
+    }
+    input:-webkit-autofill {
+        -webkit-box-shadow: 0 0 0px 1000px white inset;
+        outline:none;
+        box-shadow:#fff 0px 0px 0px ;
+    }
+    input[type="text"],
+    input[type="button"], 
+    input[type="submit"], 
+    input[type="reset"],
+    textarea {
+        -webkit-appearance: none;
+    }
+}
+
+@mixin iphone_div_click_initial (){
+    div,a,img {
+        -webkit-tap-highlight-color: transparent;
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        user-select:none;
+    }
+}
+
+@mixin common_body(){
+    html {
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        top: 0px;
+        left: 0px;
+    }
+    body {
+        @extend html;
+        position: relative;
+        background: #fff;
+    }
+}
+
+@mixin placehold_color ($color: #999){
+    input::-webkit-input-placeholder { /* WebKit browsers */ 
+        color: $color; 
+    } 
+    input:-moz-placeholder { /* Mozilla Firefox 4 to 18 */ 
+        color: $color; 
+    } 
+    input::-moz-placeholder { /* Mozilla Firefox 19+ */ 
+        color: $color; 
+    } 
+    input:-ms-input-placeholder { /* Internet Explorer 10+ */ 
+        color: $color; 
+    } 
+}
+
+/* base */
+@mixin clearfix(){
+    clear: both;
+    overflow: hidden;
+    *zoom: 1;
+}
+@mixin clearboth(){
+    width: 100%;
+    clear: both;
+    overflow: hidden;
+}
+
+@mixin border-radius($radius:4px){
+    border-radius: $radius;
+    -webkit-border-radius: $radius;
+    -moz-border-radius: $radius;
+    -ms-border-radius: $radius;
+}
+@mixin text-shadow($shadow){
+    text-shadow: $shadow;
+}
+@mixin box-shadow($shadow){
+    box-shadow: $shadow;
+}
+
+@mixin absolute($top:0px,$left:0px){
+    position: absolute;
+    top: $top;
+    left: $left;
+}
+@mixin absolute2(){
+    position: absolute;
+}
+@mixin relative($top:0px,$left:0px){
+    position: relative;
+    top: $top;
+    left: $left;
+}
+@mixin fixed($top:0px,$left:0px){
+    position: fixed;
+    top: $top;
+    left: $left;
+}
+
+@mixin transition($transi){
+    transition: $transi;
+    -moz-transition: $transi;
+    -webkit-transition: $transi;
+    -ms-transition: $transi;
+}
+@mixin transform($transf){
+    transform: $transf;
+    -webkit-transform: $transf;
+    -moz-transform: $transf;
+    -ms-transform: $transf;
+}
+@mixin animation($animation, $mode: none){
+    animation: $animation;
+    -webkit-animation: $animation;
+    -moz-animation: $animation;
+    -ms-animation: $animation;
+}
+@mixin animation-fm($mode: forwards) {
+    animation-fill-mode: $mode;
+    -webkit-animation-fill-mode: $mode;
+    -moz-animation-fill-mode: $mode;
+    -ms-animation-fill-mode: $mode;
+}
+
+@mixin perspective($perspective:1000px){
+    perspective: $perspective;
+    -webkit-perspective: $perspective;
+    -moz-perspective: $perspective;
+    -ms-perspective: $perspective;
+}
+@mixin preserve-3d($preserve:preserve-3d){
+    transform-style: $preserve;
+    -webkit-transform-style: $preserve;
+    -moz-transform-style: $preserve;
+    -ms-transform-style: $preserve;
+}
+@mixin transform-origin($origin: center){
+    transform-origin: $origin;
+    -webkit-transform-origin: $origin;
+    -moz-transform-origin: $origin;
+    -ms-transform-origin: $origin;
+}
+
+
+@mixin setBg($url){
+    background: url($url) center no-repeat;
+    background-size: 100% 100%;
+}
+
+
+/* ------------- flexbox ------------- */
+@mixin setFlex($flex: flex){
+    display: $flex;
+    display: -webkit-$flex;
+}
+@mixin setFlexXYCenter($x: center, $y: center){
+    justify-content: $x;
+    -webkit-justify-content: $x;
+    align-items: $y;
+    -webkit-align-items: $y;
+}
+@mixin setFlexDirection($d: column){
+    flex-direction: $d;
+    -webkit-flex-direction: $d;
+}
+//flex-start | flex-end | center | space-between | space-around; x主轴
+@mixin setFlexJustify($d: center){
+    justify-conent: $d;
+    -webkit-justify-content: $d;
+}
+
+// nowrap wrap wrap-reverse
+@mixin flexWrap($wrap: wrap) {
+    flex-wrap: $wrap;
+    -webkit-flex-wrap: $wrap;
+    -moz-flex-wrap: $wrap;
+    -ms-flex-wrap: $wrap;
+}
+
+// Y轴 多行情况下,y轴对齐方式
+@mixin alignContent($flex_content: flex-start){
+    align-content: $flex_content;
+    -webkit-align-content: $flex_content;
+    -ms-align-content: $flex_content;
+    -moz-align-content: $flex_content;
+}
+
+// Y轴 一行情况下,y轴对齐方式
+@mixin alignItems($flex_items: flex-start){
+    align-items: $flex_items;
+    -webkit-align-items: $flex_items;
+    -moz-align-items: $flex_items;
+    -ms-align-items: $flex_items;
+}
+
+
+/* ----------------- filter --------------- */
+@mixin filter ($filter: blur(10px)){
+    filter: $filter;
+    -webkit-filter: $filter;
+    -moz-filter: $filter;
+    -ms-filter: $filter;
+}
+
+
+/* -------------------- img ------------------- */
+@mixin img-fit ($fit: cover){
+    object-fit: $fit;
+    -o-object-fit: $fit;
+}
+
+@mixin img-pos ($pos: center center) {
+    object-position: $pos;
+    -o-object-position: $pos;
+}
+
+
+/* ===================== before and after =================== */
+@mixin before ($w, $h, $img, $l: 0px, $t: 0px){
+    &::before {
+        content: '';
+        position: absolute;
+        top: $t;
+        left: $l;
+        width: $w;
+        height: $h;
+        background: url($img) center no-repeat;
+        background-size: cover;
+    }
+}
+
+
+/* =========================== touch adder ======================== */
+@mixin overflow_touch ($touch: touch){
+    overflow-scrolling: $touch;
+    -webkit-overflow-scrolling: $touch;
+    -moz-overflow-scrolling: $touch;
+    -ms-overflow-scrolling: $touch;
+}
+
+// $omit: clip/ellipsis
+@mixin text_omit ($omit: ellipsis){
+    text-overflow: $omit;
+    white-space: nowrap;
+    overflow: hidden;
+}
+// $line: double lines clip
+@mixin text_omit_lines ($omit: ellipsis, $line: 2){
+    display: -webkit-box;
+    -webkit-line-clamp: $line;
+    -webkit-box-orient: vertical;
+    text-overflow: $omit;
+    overflow: hidden;
+}
+
+
+
+/* media queries */
+@mixin MQ($size){
+    @if $size == xs{
+        @media only screen and (max-width: $sm){
+            @content;
+        }
+    }@else if $size == sm{
+        @media only screen and (min-width: $sm+1) and (max-width: $md){
+            @content;
+        }
+    }@else if $size == md{
+        @media only screen and (min-width: $md+1) and (max-width: $lg){
+            @content;
+        }
+    }@else if $size == lg{
+        @media only screen and (min-width: $lg+1){
+            @content;
+        } 
+    }
+}
+@mixin MQ2($size){
+    @media only screen and (min-width: $size){
+        @content;
+    }
+}
+@mixin MQ3($size){
+    @media only screen and (max-width: $size){
+        @content;
+    }
+}
+
+@mixin MQ4($size){
+    @media only screen and (max-height: $size){
+        @content;
+    }
+}
+
+
+/* module */
+@mixin button-links($button-base:darken($color11,10%),$button-hover:darken($color11,15%)){
+    border: 1px solid darken($color11,16%);
+    padding: .3em .6em;
+    margin-left: .7em;
+    @include border-radius(8px);
+    @include text-shadow(0 1px 2px $color11);
+    color: lignten($color10,50%);
+    background-color: $button-base;
+    &:hover {
+        background-color: $button-hover;
+    }
+}
+@mixin button-links2($button-base:darken($color11,10%),$button-hover:darken($color11,15%)){
+    border: 1px solid darken($color11,16%);
+    padding: .3em 1.2em;
+    margin-left: .7em;
+    @include border-radius(14px);
+    @include text-shadow(0 1px 2px $color11);
+    color: lignten($color10,50%);
+    background-color: $button-base;
+    &:hover {
+        background-color: $button-hover;
+    }
+}
+@mixin button-edit($height:20px,$width:40px,$color:orange){
+    height: $height;
+    width: $width;
+    text-align: center;
+    font-size: 12px;
+    line-height: $height;
+    background: $color;
+    color: #fff;
+    @include box-shadow($color 0px 0px 4px);
+    &:hover {
+        background: lighten($color,10%);
+    }
+}
+// 无默认值的参数 必须 先写
+@mixin button-gray($radius:0px,$color_other:$color11){
+    border: 1px darken($color11,40%) solid;
+    padding: 5px 12px;
+    border-radius: $radius;
+    color: #000;
+    background: darken($color_other,5%);
+}
+
+/* linear-radial only color transition */
+@mixin linear-gradient($type,$co1,$co2){
+    background: linear-gradient($type,$co1,$co2);
+    background: -webkit-linear-gradient($type,$co1,$co2);
+    background: -moz-linear-gradient($type,$co1,$co2);
+    background: -ms-linear-gradient($type,$co1,$co2);
+}
+
+@mixin radial-gradient($type,$size,$co1,$co2){
+    background: radial-gradient($type,$size,$co1,$co2);
+    background: -webkit-radial-gradient($type,$size,$co1,$co2);
+    background: -moz-radial-gradient($type,$size,$co1,$co2);
+    background: -ms-radial-gradient($type,$size,$co1,$co2);
+}
+
+
+
+
+/* other-special */
+@mixin linear-gradient2($type,$co1,$co2,$co3){
+    background: linear-gradient($type,$co1,$co2,$co3);
+    background: -webkit-linear-gradient($type,$co1,$co2,$co3);
+    background: -moz-linear-gradient($type,$co1,$co2,$co3);
+    background: -ms-linear-gradient($type,$co1,$co2,$co3);
+}
+@mixin linear-gradient3($type,$co1,$co2,$co3,$co4){
+    background: linear-gradient($type,$co1,$co2,$co3,$co4);
+    background: -webkit-linear-gradient($type,$co1,$co2,$co3,$co4);
+    background: -moz-linear-gradient($type,$co1,$co2,$co3,$co4);
+    background: -ms-linear-gradient($type,$co1,$co2,$co3,$co4);
+}
+
+
+
+

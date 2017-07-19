@@ -1,0 +1,39 @@
+{
+  "name": "react_spa_struct",
+  "version": "1.0.0",
+  "description": "类react相关前端结构",
+  "main": "index.js",
+  "scripts": {
+    "start": "cd static/public && node ../config/webpack_hot_server.js",
+    "build": "rimraf static/public/dist && webpack --config static/config/webpack.pro.config.js -p"
+  },
+  "author": "huoxu_huoxu",
+  "email": "530607199@qq.com",
+  "license": "ISC",
+  "dependencies": {
+    "babel-core": "^6.24.0",
+    "babel-loader": "^6.4.0",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-polyfill": "^6.23.0",
+    "babel-preset-es2015": "^6.24.0",
+    "babel-preset-react": "^6.23.0",
+    "babel-preset-react-hmre": "^1.1.1",
+    "babel-preset-stage-0": "^6.22.0",
+    "babel-runtime": "^6.23.0",
+    "css-loader": "^0.27.2",
+    "file-loader": "^0.11.2",
+    "lodash": "^4.17.4",
+    "npm-zepto": "^1.1.7",
+    "react": "^15.4.2",
+    "react-dom": "^15.4.2",
+    "react-redux": "^5.0.3",
+    "react-router": "^4.0.0",
+    "redux": "^3.6.0",
+    "rimraf": "^2.6.1",
+    "ruby-sass-loader": "^0.4.0",
+    "style-loader": "^0.13.2",
+    "url-loader": "^0.5.8",
+    "webpack": "^2.2.1",
+    "webpack-dev-server": "^2.4.5"
+  }
+}

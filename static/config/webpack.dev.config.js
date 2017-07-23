@@ -6,7 +6,7 @@ module.exports = {
         build: ["../src/js/app.js"],
     },
     output: {
-        path: path.resolve(__dirname, '../public/dist'),
+        path: path.resolve(__dirname, './dist'),
         publicPath: './',
         filename: '[name].min.js'
     },

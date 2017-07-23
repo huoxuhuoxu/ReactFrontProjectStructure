@@ -4,8 +4,8 @@
   "description": "类react相关前端结构",
   "main": "index.js",
   "scripts": {
-    "start": "cd static/public && node ../config/webpack_hot_server.js",
-    "build": "rimraf static/public/dist && webpack --config static/config/webpack.pro.config.js -p"
+    "start": "cd static/src && node ../config/webpack_hot_server.js",
+    "build": "node static/script/build"
   },
   "author": "huoxu_huoxu",
   "email": "530607199@qq.com",
@@ -35,5 +35,8 @@
     "url-loader": "^0.5.8",
     "webpack": "^2.2.1",
     "webpack-dev-server": "^2.4.5"
+  },
+  "devDependencies": {
+    "loglevel": "^1.4.1"
   }
 }

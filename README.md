@@ -11,21 +11,26 @@
 	注: 命令行工具 react-structure-app 源: https://github.com/huoxuhuoxu/react-structure-app
 	注: ./initial_project.sh 项目依赖初始化脚本, 需要可执行权限: sudo chmod u+x ./initial_project.sh
 	注: 最新版本可以从源package中获得 如果安装不是最新版本, 运行: sudo npm install react-structure-app@[最新版本号] -g
+	注: 命令行安装只适用于 mac OS 
 
 
 ##### 环境依赖
 	nodeJs v7.7.8
 	ruby   v2.0.0
+	git
 
+##### build 
+	对外公开资源目录: 此目录由 npm run build 打包后获得
+	index.html: 压缩后的首页
+	dist: 打包后的静态资源目录, 物理路径为 '/dist'
 
 ##### static
 	静态资源目录
-	build: 项目构建文件目录
-	public: 对外公开资源目录
+	config: 项目构建文件目录
 	script: 脚本目录
 	src: 源文件
 	
-##### build
+##### config
 	webpack_hot_server.js
 		开发服务器配置,提供模块热插拔,移动端同步
 	
@@ -39,12 +44,9 @@
 	其他打包支持: scss/css/png/jpg/jpeg/gif/eot/ttf/woff/woff2/svg/svgz
 	图片字体打包默认限制: 10000字节
 	
-##### public
-	dist: 打包后的文件目录
-	index.html: 默认首页
-
 ##### script
 	initial_project.sh: 项目初始化脚本
+	build.js: 生产环境打包脚本, npm run build 的源码
 	
 ##### src
 	sass: scss文件目录
@@ -65,12 +67,13 @@
 			status.js: 状态组件文件
 			reducer.js: 动作处理器文件
 			store.js: 存储器文件
+	index.html: 默认首页源码
 				
 	
 		
 ##### 指令
 	在项目根目录下执行
-	npm start: 启动开发服务器
+	npm start: 启用开发服务器
 	npm run build: 生产环境打包 
 
 

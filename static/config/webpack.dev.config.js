@@ -1,5 +1,6 @@
 
 let path = require('path');
+let openBrowserWebpackPlugin = require('open-browser-webpack-plugin');
 
 module.exports = {
     entry: {
@@ -22,14 +23,14 @@ module.exports = {
                     plugins: ['transform-runtime']
                 }
             },
-            {
-                test: /\.scss$/,
-                use: [
-                    'style-loader',
-                    'css-loader',                        
-                    'ruby-sass-loader?compass=1'
-                ]
-            },
+            // {
+            //     test: /\.scss$/,
+            //     use: [
+            //         'style-loader',
+            //         'css-loader',                        
+            //         'ruby-sass-loader?compass=1'
+            //     ]
+            // },
             {
                 test: /\.css$/,
                 use: [
@@ -51,6 +52,7 @@ module.exports = {
         ]
     },
     plugins: [
+        new openBrowserWebpackPlugin({url : 'http://localhost:8000'})
         // =.= 就一个入口,用不上
         // new global.webpack.optimize.CommonsChunkPlugin({
         //     name: 'commons',               

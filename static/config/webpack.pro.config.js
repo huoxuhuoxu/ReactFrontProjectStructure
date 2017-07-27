@@ -21,14 +21,14 @@ module.exports = {
                     plugins: ['transform-runtime']
                 }
             },
-            {
-                test: /\.scss$/,
-                use: [
-                    'style-loader',
-                    'css-loader',                        
-                    'ruby-sass-loader?compass=1'
-                ]
-            },
+            // {
+            //     test: /\.scss$/,
+            //     use: [
+            //         'style-loader',
+            //         'css-loader',                        
+            //         'ruby-sass-loader?compass=1'
+            //     ]
+            // },
             {
                 test: /\.css$/,
                 use: [

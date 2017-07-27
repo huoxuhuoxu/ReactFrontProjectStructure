@@ -89,6 +89,10 @@
 	.gitignore: 本地文件,屏蔽上传
 
 
+##### 注意
+	webpack 中sass打包注释了,有需要就打开,目前存在一个bug,compass报错后需要重启webpack
+
+
 
 
 

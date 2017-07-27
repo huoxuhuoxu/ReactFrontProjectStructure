@@ -1,5 +1,5 @@
 
-import '../sass/main/main.min.scss';
+// import '../sass/main/main.min.scss';
 
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';

@@ -1,12 +1,15 @@
 
 let path = require('path');
 
+const PUBLIC_NAME = require('../config').PUBLIC_NAME;
+const PIC_AND_FONT_LIMIT = require('../config').PIC_AND_FONT_LIMIT;
+
 module.exports = {
     entry: {
         build: ["./static/src/js/app.js"],
     },
     output: {
-        path: path.resolve(__dirname, '../../build/dist'),
+        path: path.resolve(__dirname, `../../${PUBLIC_NAME}/dist`),
         publicPath: './',
         filename: '[name].min.js'
     },
@@ -42,7 +45,7 @@ module.exports = {
                     {
                         loader: 'url-loader',
                         options: {
-                            limit: 10000
+                            limit: PIC_AND_FONT_LIMIT
                         }
                     }
                 ]

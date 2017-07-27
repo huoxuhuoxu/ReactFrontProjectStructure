@@ -1,10 +1,12 @@
 
 let path = require('path');
 let openBrowserWebpackPlugin = require('open-browser-webpack-plugin');
+const PORT = require('../config').PORT;
+const PIC_AND_FONT_LIMIT = require('../config').PIC_AND_FONT_LIMIT;
 
 module.exports = {
     entry: {
-        build: ["../src/js/app.js"],
+       build: [ "../src/js/app.js" ]
     },
     output: {
         path: path.resolve(__dirname, './dist'),
@@ -44,7 +46,7 @@ module.exports = {
                     {
                         loader: 'url-loader',
                         options: {
-                            limit: 10000
+                            limit: PIC_AND_FONT_LIMIT
                         }
                     }
                 ]
@@ -52,7 +54,7 @@ module.exports = {
         ]
     },
     plugins: [
-        new openBrowserWebpackPlugin({url : 'http://localhost:8000'})
+        new openBrowserWebpackPlugin({url : `http://localhost:${PORT}`})
         // =.= 就一个入口,用不上
         // new global.webpack.optimize.CommonsChunkPlugin({
         //     name: 'commons',               

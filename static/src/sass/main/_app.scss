@@ -2,6 +2,7 @@
 body {
     background: black;
     color: #fff;
+    @include transform(translate(0px));
 }
 
 

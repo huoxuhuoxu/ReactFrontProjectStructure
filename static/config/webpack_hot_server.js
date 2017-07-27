@@ -1,3 +1,7 @@
+
+// webpack 热加载服务的端口号
+const PORT = require('../config').PORT;
+
 /*eslint-disable no-console */
 
 var WebpackDevServer = require('webpack-dev-server');
@@ -7,13 +11,11 @@ var path             = require('path');
 // 引入现有 webpack 设置
 var config = require(path.join(__dirname, './webpack.dev.config.js'));
 
-// webpack 热加载服务的端口号
-var port = 8000;
 
 // 在 webpack config 中将需要的模块的 entry 中增加下面两条设置
 // 采用的 only-dev-server 而不是 dev-server 是为了在语法出错的时候不会重载浏览器页面
 config.entry.build.unshift(
-    `webpack-dev-server/client?http://0.0.0.0:${port}`,
+    `webpack-dev-server/client?http://0.0.0.0:${PORT}`,
     'webpack/hot/only-dev-server'
 );
 
@@ -51,4 +53,4 @@ var server   = new WebpackDevServer(compiler, {
     stats: { colors: true }
     //historyApiFallback: true
 });
-server.listen(port);
+server.listen(PORT);

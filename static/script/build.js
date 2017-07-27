@@ -4,8 +4,10 @@ var path = require('path');
 var cp = require('child_process');
 var readline = require('readline');
 
+const PUBLIC_NAME = require('../config').PUBLIC_NAME;
+
 const MAIN = async () => {
-    let dir_path = path.join(__dirname, '../../build');
+    let dir_path = path.join(__dirname, `../../${PUBLIC_NAME}`);
     let index_html_path = path.join(__dirname, '../src/index.html');
     if(fs.existsSync(dir_path)){
         let code = await EXEC_UNIX_CLI(`rm -rf ${dir_path}`);
@@ -49,14 +51,14 @@ const MAIN = async () => {
 };
 
 const WRITE_STREAM_DATA = (sHtml) => {
-    let new_index_html_oath = path.join(__dirname, '../../build/index.html');
+    let new_index_html_oath = path.join(__dirname, `../../${PUBLIC_NAME}/index.html`);
     fs.open(new_index_html_oath, 'w', (err, fd) => {
         if(err){
             console.log('打包index.html发生了错误');
             return ;
         }
         fs.writeFileSync(new_index_html_oath, sHtml);
-        EXEC_UNIX_CLI('rimraf build/dist && webpack --config static/config/webpack.pro.config.js -p', (result_log) => {console.log(result_log);});
+        EXEC_UNIX_CLI('npm run pro', (result_log) => {console.log(result_log);});
     });
 };
 

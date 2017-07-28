@@ -31,6 +31,7 @@
     "react-dom": "^15.4.2",
     "react-redux": "^5.0.3",
     "react-router": "^4.0.0",
+    "react-router-dom": "^4.1.2",
     "redux": "^3.6.0",
     "rimraf": "^2.6.1",
     "ruby-sass-loader": "^0.4.0",

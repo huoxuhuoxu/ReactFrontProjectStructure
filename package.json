@@ -1,6 +1,6 @@
 {
   "name": "react_spa_struct",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "类react相关前端结构",
   "main": "index.js",
   "scripts": {
@@ -25,7 +25,6 @@
     "css-loader": "^0.27.2",
     "file-loader": "^0.11.2",
     "lodash": "^4.17.4",
-    "npm-zepto": "^1.1.7",
     "open-browser-webpack-plugin": "^0.0.5",
     "react": "^15.4.2",
     "react-dom": "^15.4.2",

@@ -19,11 +19,7 @@ module.exports = {
             {
                 test: /\.js$/,
                 loader: 'babel-loader',
-                exclude: /node_modules/,
-                query: {
-                    presets: ['es2015', 'stage-0', 'react', 'react-hmre'],
-                    plugins: ['transform-runtime']
-                }
+                exclude: /node_modules/
             },
             // {
             //     test: /\.scss$/,

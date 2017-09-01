@@ -1,4 +1,23 @@
-{
-    presets: ['es2015', 'stage-0', 'react', 'react-hmre'],
-    plugins: ['transform-runtime']
+{ 
+      "env": {
+            "development": {
+                  "presets": ["es2015", "stage-0", "react", "react-hmre"],
+                  "plugins": [
+                        "transform-runtime",
+                        ["react-transform", {
+                              "transforms": [
+                                    {
+                                          "transform": "react-transform-hmr",
+                                          "imports": ["react"],
+                                          "locals": ["module"]
+                                    }
+                              ]
+                        }]
+                  ]
+            },
+            "production": {
+                  "presets": ["es2015", "stage-0", "react"],
+                  "plugins": ["transform-runtime"]
+            }
+      }
 }

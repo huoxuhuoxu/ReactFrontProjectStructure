@@ -105,7 +105,8 @@
 ##### 注意
 	webpack 中sass打包注释了,有需要就打开,目前存在一个bug,compass报错后需要重启webpack
 	目前打包出来的js文件名,只能叫build.min.js,也就是webpack配置文件里面的,build项,目前不开放动态
-
+	cross-env: 添加windows兼容
+		如果mac运行出现问题,可将package.json-scripts中cross-env删除
 
 
 

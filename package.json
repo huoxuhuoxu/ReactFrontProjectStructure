@@ -1,12 +1,12 @@
 {
   "name": "react_spa_struct",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "类react相关前端结构",
   "main": "index.js",
   "scripts": {
-    "start": "cd static/src && BABEL_ENV=development node ../config/webpack_hot_server.js",
-    "build": "BABEL_ENV=production node static/script/build",
-    "pro": "rimraf build/dist && BABEL_ENV=production webpack --config static/config/webpack.pro.config.js -p",
+    "start": "cd static/src && cross-env BABEL_ENV=development && node ../config/webpack_hot_server.js",
+    "build": "node static/script/build",
+    "pro": "rimraf build/dist && cross-env BABEL_ENV=production webpack --config static/config/webpack.pro.config.js -p",
     "sass": "cd static/src && compass watch"
   },
   "author": "huoxu_huoxu",
@@ -23,6 +23,7 @@
     "babel-preset-react-hmre": "^1.1.1",
     "babel-preset-stage-0": "^6.22.0",
     "babel-runtime": "^6.23.0",
+    "cross-env": "^5.0.5",
     "css-loader": "^0.27.2",
     "file-loader": "^0.11.2",
     "open-browser-webpack-plugin": "^0.0.5",

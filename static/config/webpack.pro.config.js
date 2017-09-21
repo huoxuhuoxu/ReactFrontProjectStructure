@@ -1,8 +1,7 @@
 
 let path = require('path');
-
-const PUBLIC_NAME = require('../config').PUBLIC_NAME;
-const PIC_AND_FONT_LIMIT = require('../config').PIC_AND_FONT_LIMIT;
+let PUBLIC_NAME = require('../config').PUBLIC_NAME;
+let PIC_AND_FONT_LIMIT = require('../config').PIC_AND_FONT_LIMIT;
 
 module.exports = {
     entry: {

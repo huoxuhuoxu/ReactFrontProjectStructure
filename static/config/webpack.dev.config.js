@@ -1,8 +1,11 @@
 
 let path = require('path');
+let PORT = require('../config').PORT;
+let PIC_AND_FONT_LIMIT = require('../config').PIC_AND_FONT_LIMIT;
+let webpack = require('webpack');
+
 let openBrowserWebpackPlugin = require('open-browser-webpack-plugin');
-const PORT = require('../config').PORT;
-const PIC_AND_FONT_LIMIT = require('../config').PIC_AND_FONT_LIMIT;
+
 
 module.exports = {
     entry: {
@@ -10,7 +13,7 @@ module.exports = {
     },
     output: {
         path: path.resolve(__dirname, './dist'),
-        publicPath: './',
+        publicPath: '/dist/',
         filename: '[name].min.js'
     },
     devtool: '#eval-source-map',
@@ -50,13 +53,8 @@ module.exports = {
         ]
     },
     plugins: [
+        new webpack.HotModuleReplacementPlugin(),
         new openBrowserWebpackPlugin({url : `http://localhost:${PORT}`})
-        // =.= 就一个入口,用不上
-        // new global.webpack.optimize.CommonsChunkPlugin({
-        //     name: 'commons',               
-        //     filename: '[name].bundle.js',   
-        //     minChunks: 4                   
-        // })
     ]
 };
 

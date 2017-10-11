@@ -27,7 +27,7 @@ const MAIN = async () => {
             let s = cmd.trim();
             if(b && /^<\/script\>$/.test(s)){
                 b = false;
-                sHtml += `<script src='./dist/build.min.js?v=${new Date().getTime()}'></script>`;
+                sHtml += `<script src="./dist/build.min.js?v=${new Date().getTime()}"></script>`;
                 return ;
             }
             if(b){

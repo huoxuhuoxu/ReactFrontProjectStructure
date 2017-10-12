@@ -1,6 +1,6 @@
 {
   "name": "react_spa_struct",
-  "version": "1.9.0",
+  "version": "1.9.1",
   "description": "类react相关前端结构",
   "main": "index.js",
   "scripts": {

@@ -85,6 +85,12 @@
     @include absolute(50%,50%);
     @include transform(translate(-50%,-50%));
 }
+%center-block3 {
+    @extend %absolute2;
+    left: 50%;
+    @include transform(translateX(-50%));
+}
+
 %text-align {
     text-align: center;
 }

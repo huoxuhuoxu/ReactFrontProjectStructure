@@ -64,16 +64,14 @@
 	lib: 第三方资源
 	resource: 图片/字体等资源目录
 	js:
-		components: 组件目录
+		modules: 组件目录
 		tools: 工具文件目录
 			frontBase.js: 前端方法
-			reactMiddleware.js: react相关中间件
 			tools.js: 工具方法
-			touch.js: 触摸方法
 		views: 页面组件目录
 		app.js: 主程序入口
 		router.js: 路由文件
-		actions: reudx目录
+		status: reudx目录
 			action.js: 动作文件
 			status.js: 状态组件文件
 			reducer.js: 动作处理器文件
@@ -108,6 +106,8 @@
 	cross-env: 添加windows兼容
 		如果mac运行出现问题,可将package.json-scripts中cross-env删除
 
+##### url
+[redux,异步动作处理使用中间件: react-middleware-async](https://github.com/huoxuhuoxu/redux-middleware-async)
 
 
 

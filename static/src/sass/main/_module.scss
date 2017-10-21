@@ -392,20 +392,4 @@
 
 
 
-/* other-special */
-@mixin linear-gradient2($type,$co1,$co2,$co3){
-    background: linear-gradient($type,$co1,$co2,$co3);
-    background: -webkit-linear-gradient($type,$co1,$co2,$co3);
-    background: -moz-linear-gradient($type,$co1,$co2,$co3);
-    background: -ms-linear-gradient($type,$co1,$co2,$co3);
-}
-@mixin linear-gradient3($type,$co1,$co2,$co3,$co4){
-    background: linear-gradient($type,$co1,$co2,$co3,$co4);
-    background: -webkit-linear-gradient($type,$co1,$co2,$co3,$co4);
-    background: -moz-linear-gradient($type,$co1,$co2,$co3,$co4);
-    background: -ms-linear-gradient($type,$co1,$co2,$co3,$co4);
-}
-
-
-
 

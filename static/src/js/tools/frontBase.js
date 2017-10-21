@@ -1,11 +1,7 @@
 
 // 基础模块
-// AJAX 此方法还在调试中,...有待进行可用性测试...
-import $ from 'npm-zepto';
 
-// 超级垫片
 import 'babel-polyfill';
-
 
 const FN_NULL = function(){};
 
@@ -59,26 +55,6 @@ const SLEEP2 = async function(ms){
     })
 }
 
-
-// Promise
-const AJAX_PROMISE = function(url, data={}, type="POST", dataType="JSON")
-{
-    return new Promise(function(resolve, reject){
-        $.ajax({
-            url,
-            data,
-            type,
-            dataType,
-            timeout: 8000,
-            success: (res, state, xhr) => {
-                resolve(res);
-            },
-            error: (xhr, errorText, errorStatus) => {
-                reject({xhr, errorText, errorStatus});
-            }
-        });
-    });
-}
 
 // fetch 
 const AJAX_FETCH = (url, data = {},fnSucc = FN_NULL, fnFail = FN_NULL) => 
@@ -188,7 +164,6 @@ const PARSE_COOKIES = (key) => {
 const obj = {
     sleep: SLEEP,
     sleep2: SLEEP2,
-    ajaxPromise: AJAX_PROMISE,
     handlerPromise: HANDLER_PROMISE,
     handlerFPromise: HANDLER_FPROMISE,
     fnNull: FN_NULL,

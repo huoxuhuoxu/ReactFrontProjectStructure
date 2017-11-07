@@ -1,5 +1,5 @@
-#### 类react前端项目结构	
-##### v 1.0.0
+#### react项目结构初始化
+##### v 2.0.0
 
 ##### 通过命令行安装
 	sudo npm install react-structure-app -g

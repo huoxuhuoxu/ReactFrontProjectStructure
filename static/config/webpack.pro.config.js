@@ -10,7 +10,7 @@ module.exports = {
     output: {
         path: path.resolve(__dirname, `../../${PUBLIC_NAME}/dist`),
         publicPath: './dist',
-        filename: '[name].min.js'
+        filename: '[name].min.[chunkhash:32].js'
     },
     module: {
         rules: [

@@ -2,6 +2,7 @@
 let path = require('path');
 let PUBLIC_NAME = require('../config').PUBLIC_NAME;
 let PIC_AND_FONT_LIMIT = require('../config').PIC_AND_FONT_LIMIT;
+let ET = require("extract-text-webpack-plugin");
 
 module.exports = {
     entry: {
@@ -29,10 +30,10 @@ module.exports = {
             // },
             {
                 test: /\.css$/,
-                use: [
-                    'style-loader',
-                    'css-loader',
-                ]
+                use: ET.extract({
+                    fallback: "style-loader",
+                    use: "css-loader"
+                })
             },
             {
                 test: /\.(png|jpg|jpeg|gif|eot|ttf|woff|woff2|svg|svgz)(\?.+)?$/,
@@ -46,6 +47,11 @@ module.exports = {
                 ]
             }
         ]
-    }
+    },
+    plugins: [
+        new ET({
+            filename: "style.min.[chunkhash:32].css"
+        })
+    ]
 };
 

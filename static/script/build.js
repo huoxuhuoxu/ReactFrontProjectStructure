@@ -23,11 +23,14 @@ const MAIN = async () => {
         console.log(result_log);
 
         let arr = fs.readdirSync(path.join(dir_path, "dist"));
-        let sJsMinName;
+        let sJsMinName, sStyleMinName;
         if(arr.length){
             for(let item of arr){
                 if(/build\.min\./.test(item)){
                     sJsMinName = "./dist/" + item;
+                }
+                if (/style\.min\./.test(item)) {
+                    sStyleMinName = "./dist/" + item;
                 }
             }
         }   
@@ -52,6 +55,10 @@ const MAIN = async () => {
                 if(/^\<script\>$/.test(s)){
                     b = true;
                 }else{
+                    if (/<\/head>/.test(s) && sStyleMinName) {
+                        sHtml += `<link rel="stylesheet" href="${sStyleMinName}" />${s}`;
+                        return ;
+                    }
                     sHtml += s;
                 }
                 

@@ -120,50 +120,6 @@ const reduceClassNameTree = (oDomObject, sClassName) => {
 // 检测安卓
 const testAndroid = () => /Android/i.test(window.navigator.userAgent);
 
-// 数字每三位加, 生成例如: 20000 = 20,000
-const handlerThousand = (num) => {
-    if(Number(num) >= 1000){
-        num += '';
-        let c = num.split('').reverse();
-        for(let i=2,l=c.length; i<l; i+=3){
-            if(i!=l-1){
-                c[i] = ','+c[i];
-            }
-        }
-        num = c.reverse().join('');
-    }
-    return num;
-};
-
-// 给string对象添加方法，将 "12345" 返回 "12,345"
-String.prototype.addSemi = function(){
-    let num = this;
-    let c = num.split('').reverse();
-    for(let i=2,l=c.length; i<l; i+=3){
-        if(i!==l-1){
-            c[i] = ','+c[i];
-        }
-    }
-    num = c.reverse().join('');
-    return num;
-};
-
-// 给Number对象添加方法，将 12345 返回 "12,345"
-Number.prototype.addSemi = function(){
-    let num = this;
-    if(Number(num) >= 1000){
-        num += '';
-        let c = num.split('').reverse();
-        for(let i=2,l=c.length; i<l; i+=3){
-            if(i!==l-1){
-                c[i] = ','+c[i];
-            }
-        }
-        num = c.reverse().join('');
-    }
-    return num;
-};
-
 export {
     rgbToHsl,
     hslToRgb,
@@ -173,7 +129,6 @@ export {
     reduceClassNameTree,
     usingRem,
     handlerTouchControl,
-    handlerThousand,
     detechmod,
     testAndroid
 };

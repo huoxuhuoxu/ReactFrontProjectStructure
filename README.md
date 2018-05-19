@@ -96,9 +96,9 @@
 
 
 ##### 注意
-	js支持：		es2015，es2016, es2017, async/await, decorator, do
-	打包支持: 	js/scss/css/png/jpg/jpeg/gif/eot/ttf/woff/woff2/svg/svgz
-	单个文件打包限制: 10000字节 (可配置)
+	js支持：			es2015，es2016, es2017, async/await, decorator, do
+	打包支持: 		js/scss/css/png/jpg/jpeg/gif/eot/ttf/woff/woff2/svg/svgz
+	图片/字体 打包限制: 	10000字节 (可配置)
 
 	webpack 中sass打包注释了,有需要就打开,目前存在一个bug,css写错后compass会产生报错, 中断webpack的监听, 需要重启webpack
 	cross-env: 添加windows兼容

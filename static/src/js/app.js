@@ -5,7 +5,7 @@ import ReactDOM from 'react-dom';
 class App extends Component {
 	render (){
 		return (
-			<div>这是测试</div>
+			<div>测试...</div>
 		)
 	}
 }

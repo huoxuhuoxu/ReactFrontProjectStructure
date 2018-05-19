@@ -51,7 +51,7 @@
 	webpack.pro.config.js
 		生产环境打包配置
 		
-	js默认支持拓展: es2015, stage-0, react, transform-runtime
+	js默认支持拓展: es2015, stage-0, react, transform-runtime, transform-decorators-legacy
 	其他打包支持: scss/css/png/jpg/jpeg/gif/eot/ttf/woff/woff2/svg/svgz
 	图片字体打包默认限制: 10000字节 (可配置)
 	
@@ -105,10 +105,10 @@
 	cross-env: 添加windows兼容
 		如果mac运行出现问题,可将package.json-scripts中cross-env删除
 
-##### url
-[redux,异步动作处理使用中间件: react-middleware-async](https://github.com/huoxuhuoxu/redux-middleware-async)
-
-[脚手架:react-structure-app](https://github.com/huoxuhuoxu/react-structure-app)
+##### 相关
+> [redux,异步动作处理使用中间件: react-middleware-async](https://github.com/huoxuhuoxu/redux-middleware-async)
+>
+> [脚手架: react-structure-app](https://github.com/huoxuhuoxu/react-structure-app)
 
 
 

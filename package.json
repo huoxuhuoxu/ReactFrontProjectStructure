@@ -44,6 +44,9 @@
     "webpack": "^4.16.3",
     "webpack-cli": "^3.1.0",
     "webpack-dev-server": "^3.1.5",
-    "webpack-parallel-uglify-plugin": "^1.1.0"
+    "webpack-parallel-uglify-plugin": "^1.1.0",
+    "eslint-plugin-react": "^7.4.0",
+    "babel-eslint": "^8.0.1",
+    "loglevel": "^1.4.1"
   }
 }

@@ -1,39 +1,31 @@
+const HtmlWebpackPlugin =   require('html-webpack-plugin');
+const CleanWebpackPlugin =  require('clean-webpack-plugin');
+const path =                require('path');
+const config =              require("../config");
 
-let path = require('path');
-let PUBLIC_NAME = require('../config').PUBLIC_NAME;
-let PIC_AND_FONT_LIMIT = require('../config').PIC_AND_FONT_LIMIT;
-let ET = require("extract-text-webpack-plugin");
-
-module.exports = {
+const pro = {
+    mode: "production",
     entry: {
-        build: ["./static/src/js/app.js"],
+        main: "./static/src/js/index.js"
     },
     output: {
-        path: path.resolve(__dirname, `../../${PUBLIC_NAME}/dist`),
-        publicPath: './dist',
-        filename: '[name].min.[chunkhash:32].js'
+        path: path.resolve(__dirname, `../../${config.PUBLIC_NAME}`),
+        filename: './dist/[name].[hash:32].js'
     },
     module: {
         rules: [
-            {
-                test: /\.js|\.jsx$/,
-                loader: 'babel-loader',
-                exclude: /node_modules/
+            { 
+                test: /\.css$/, 
+                use: [
+                    { loader: 'style-loader' },
+                    { loader: 'css-loader', options: { modules: true } }
+                ]
             },
-            // {
-            //     test: /\.scss$/,
-            //     use: [
-            //         'style-loader',
-            //         'css-loader',                        
-            //         'ruby-sass-loader?compass=1'
-            //     ]
-            // },
             {
-                test: /\.css$/,
-                use: ET.extract({
-                    fallback: "style-loader",
-                    use: "css-loader"
-                })
+                test: /\.(js|jsx)$/,
+                use: [
+                    { loader: 'babel-loader', options: { cacheDirectory: true } }
+                ]
             },
             {
                 test: /\.(png|jpg|jpeg|gif|eot|ttf|woff|woff2|svg|svgz)(\?.+)?$/,
@@ -41,7 +33,7 @@ module.exports = {
                     {
                         loader: 'url-loader',
                         options: {
-                            limit: PIC_AND_FONT_LIMIT
+                            limit: config.PIC_AND_FONT_LIMIT
                         }
                     }
                 ]
@@ -49,9 +41,13 @@ module.exports = {
         ]
     },
     plugins: [
-        new ET({
-            filename: "style.min.[chunkhash:32].css"
+        new CleanWebpackPlugin([config.PUBLIC_NAME]),
+        new HtmlWebpackPlugin({
+            title: config.PAGE_TITLE,
+            template: config.PAGE_TIMELATE
         })
     ]
 };
 
+
+module.exports = pro;

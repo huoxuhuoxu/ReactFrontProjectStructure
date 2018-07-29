@@ -211,7 +211,7 @@
     -ms-flex-wrap: $wrap;
 }
 
-// Y轴 多行情况下,y轴对齐方式
+// Y mutil
 @mixin alignContent($flex_content: flex-start){
     align-content: $flex_content;
     -webkit-align-content: $flex_content;
@@ -219,7 +219,7 @@
     -moz-align-content: $flex_content;
 }
 
-// Y轴 一行情况下,y轴对齐方式
+// Y single
 @mixin alignItems($flex_items: flex-start){
     align-items: $flex_items;
     -webkit-align-items: $flex_items;
@@ -365,7 +365,7 @@
         background: lighten($color,10%);
     }
 }
-// 无默认值的参数 必须 先写
+
 @mixin button-gray($radius:0px,$color_other:$color11){
     border: 1px darken($color11,40%) solid;
     padding: 5px 12px;

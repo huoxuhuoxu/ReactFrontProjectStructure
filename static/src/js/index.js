@@ -1,14 +1,9 @@
+import "../sass/main.min.css";
 
-import React, { Component } from 'react';
+import React from 'react';
 import ReactDOM from 'react-dom';
+import App from "./views/router";
 
-class App extends Component {
-	render (){
-		return (
-			<div>测试...</div>
-		)
-	}
-}
 
 ReactDOM.render(
 	<App />, 
@@ -17,4 +12,3 @@ ReactDOM.render(
 		console.log('挂载完成');
 	}
 );
-

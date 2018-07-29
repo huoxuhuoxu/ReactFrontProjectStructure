@@ -1,0 +1,78 @@
+
+.block_none {
+    display: none;
+}
+.block_zero {
+    opacity: 0;
+}
+
+.clear_both {
+    @extend %clearboth;
+}
+
+.block_pointer {
+    cursor: pointer;
+}
+
+
+// space
+.content_none {
+    width: 100%;
+    clear: both;
+}
+
+
+.center_block {
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+}
+
+.a_default {
+    color: darken(#f7f7f7,70%);
+    &:visited {
+        color: darken(#f7f7f7,70%);
+    }
+    &:active {
+        color: darken(#f7f7f7,70%);
+    }
+    &:link {
+        color: darken(#f7f7f7,70%);
+    }
+    &:hover {
+        color: darken(#f7f7f7,70%);
+    }
+}
+.a_default2 {
+    color: darken(#f7f7f7,50%);
+    &:visited {
+        color: darken(#f7f7f7,50%);
+    }
+    &:active {
+        color: darken(#f7f7f7,50%);
+    }
+    &:link {
+        color: darken(#f7f7f7,50%);
+    }
+    &:hover {
+        color: darken(#f7f7f7,50%);
+    }
+}
+
+.dz_button:focus,
+.dz_button:link,
+.dz_button:active,
+.dz_button:visited,
+.dz_button:hover,
+button,
+button:hover,
+button:focus,
+button:visited,
+button:active {
+    -webkit-outline: none;
+    -moz-outline: none;
+    outline: none;
+}

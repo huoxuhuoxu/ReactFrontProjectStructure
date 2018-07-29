@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="zh-en">
     <head>
-        <title>这是项目名称</title>
+        <title><%= htmlWebpackPlugin.options.title %></title>
         <meta charset="utf-8"/>
         <meta name="keywords" content="这是项目关键字" />
         <meta name="description" content="这是项目详情" />
@@ -20,17 +20,6 @@
 
       <div id="app"></div>
 
-      <script>
-
-            (function(){
-
-                var oScript = document.createElement('script');
-                oScript.src="./dist/build.min.js?v=" + new Date().getTime();
-
-                document.getElementsByTagName('body')[0].appendChild(oScript);
-
-            })();
-
-      </script>
+      
     </body>
 </html>

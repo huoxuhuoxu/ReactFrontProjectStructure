@@ -4,21 +4,22 @@
                   "presets": ["es2015", "stage-0", "react", "react-hmre"],
                   "plugins": [
                         "transform-decorators-legacy",
-                        "transform-runtime",
-                        ["react-transform", {
-                              "transforms": [
-                                    {
-                                          "transform": "react-transform-hmr",
-                                          "imports": ["react"],
-                                          "locals": ["module"]
-                                    }
-                              ]
-                        }]
+                        [
+                              "react-transform", {
+                                    "transforms": [
+                                          {
+                                                "transform": "react-transform-hmr",
+                                                "imports": [ "react" ],
+                                                "locals": [ "module" ]
+                                          }
+                                    ]
+                              }
+                        ]
                   ]
             },
             "production": {
                   "presets": ["es2015", "stage-0", "react"],
-                  "plugins": ["transform-decorators-legacy", "transform-runtime"]
+                  "plugins": ["transform-decorators-legacy"]
             }
       }
 }

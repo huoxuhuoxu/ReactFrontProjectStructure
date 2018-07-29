@@ -11,7 +11,7 @@
     @return ($px / $rem_value) + rem;
 }
 
-// 2x pic 简写
+// 2x pic 
 @function rem($px) {
     @return ($px / $rem_value)/2 + rem;
 }

@@ -1,5 +1,3 @@
-
-
 // 检测访问来源,pc || wep
 const detechmod = () => {
     let n = window.navigator.userAgent;
@@ -84,13 +82,6 @@ const usingRem = () => {
     return w;
 };
 
-// 处理华为等有内置触摸条的, 只有需要锁定第一视口情况,才需要
-const handlerTouchControl = (c = false) => {
-    let a = ((window.screen.availHeight/window.screen.availWidth).toFixed(2)*100),
-        b = ((document.body.scrollHeight/window.screen.availWidth).toFixed(2)*100);
-    return a === b;
-};
-
 // 适用于自动执行的动画, 返回RAF
 const usingAnimationFrame = () => (window.requestAnimationFrame ||
                                     window.webkitRequestAnimationFrame ||
@@ -100,22 +91,6 @@ const usingAnimationFrame = () => (window.requestAnimationFrame ||
                                     function(callback) {
                                         window.setTimeout(callback, 1000 / 60);
                                     });
-
-// 递归树,解析DOM
-const reduceDomTree = (oDomObject, sDomName) => {
-    if(oDomObject.nodeName.toLowerCase() == sDomName){
-        return oDomObject;
-    }
-    return reduceDomTree(oDomObject.parentNode, sDomName);
-};
-
-// 递归树,解析className
-const reduceClassNameTree = (oDomObject, sClassName) => {
-    if(oDomObject.className.includes(sClassName)){
-        return oDomObject;
-    }
-    return reduceClassNameTree(oDomObject.parentNode, sClassName);
-};
 
 // 检测安卓
 const testAndroid = () => /Android/i.test(window.navigator.userAgent);

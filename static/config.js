@@ -12,5 +12,12 @@ config.PUBLIC_NAME = 'public';
 // 打包时字体图片的限制
 config.PIC_AND_FONT_LIMIT = 10000;
 
+// page title
+config.PAGE_TITLE = "测试";
+
+// html template
+config.PAGE_TIMELATE = "./static/src/index.html";
+
+
 module.exports = config;
 

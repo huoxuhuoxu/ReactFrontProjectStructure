@@ -4,4 +4,5 @@ node_modules
 .vscode
 npm-debug.log
 public
+static/src/sass/main.min.css
 

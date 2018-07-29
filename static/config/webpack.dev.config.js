@@ -1,29 +1,28 @@
+const HtmlWebpackPlugin =   require('html-webpack-plugin');
+const webpack =             require('webpack');
+const path =                require('path');
+const openBrowserWebpackPlugin = require('open-browser-webpack-plugin');
+const config =              require("../config");
 
-let path = require('path');
-let PORT = require('../config').PORT;
-let PIC_AND_FONT_LIMIT = require('../config').PIC_AND_FONT_LIMIT;
-let webpack = require('webpack');
-
-let openBrowserWebpackPlugin = require('open-browser-webpack-plugin');
-
-
-module.exports = {
+const dev = {
+    mode: "development",
     entry: {
-       build: [ "../src/js/app.js" ]
+        main: "./static/src/js/index.js"
     },
     output: {
-        path: path.resolve(__dirname, './dist'),
-        publicPath: '/dist/',
-        filename: '[name].min.js'
+        path: path.resolve(__dirname, `../../${config.PUBLIC_NAME}`),
+        filename: './dist/[name].[hash:32].js'
     },
-    devtool: '#eval-source-map',
+    devtool: 'inline-source-map',
+    devServer: {
+        contentBase: `./${config.PUBLIC_NAME}`,
+        compress: true,
+        hot: true,
+        port: config.PORT,
+        stats: "errors-only"
+    },
     module: {
         rules: [
-            {
-                test: /\.js|\.jsx$/,
-                loader: 'babel-loader',
-                exclude: /node_modules/
-            },
             // {
             //     test: /\.scss$/,
             //     use: [
@@ -32,11 +31,17 @@ module.exports = {
             //         'ruby-sass-loader?compass=1'
             //     ]
             // },
-            {
-                test: /\.css$/,
+            { 
+                test: /\.css$/, 
                 use: [
-                    'style-loader',
-                    'css-loader',
+                    { loader: 'style-loader' },
+                    { loader: 'css-loader', options: { modules: true } }
+                ]
+            },
+            {
+                test: /\.(js|jsx)$/,
+                use: [
+                    { loader: 'babel-loader', options: { cacheDirectory: true } }
                 ]
             },
             {
@@ -45,7 +50,7 @@ module.exports = {
                     {
                         loader: 'url-loader',
                         options: {
-                            limit: PIC_AND_FONT_LIMIT
+                            limit: config.PIC_AND_FONT_LIMIT
                         }
                     }
                 ]
@@ -54,8 +59,13 @@ module.exports = {
     },
     plugins: [
         new webpack.HotModuleReplacementPlugin(),
-        new openBrowserWebpackPlugin({url : `http://localhost:${PORT}`})
+        new HtmlWebpackPlugin({
+            title: config.PAGE_TITLE,
+            template: config.PAGE_TIMELATE
+        }),
+        new openBrowserWebpackPlugin({url : `http://localhost:${config.PORT}`})
     ]
 };
 
 
+module.exports = dev;

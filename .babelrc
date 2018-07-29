@@ -3,23 +3,12 @@
             "development": {
                   "presets": ["es2015", "stage-0", "react", "react-hmre"],
                   "plugins": [
-                        "transform-decorators-legacy",
-                        [
-                              "react-transform", {
-                                    "transforms": [
-                                          {
-                                                "transform": "react-transform-hmr",
-                                                "imports": [ "react" ],
-                                                "locals": [ "module" ]
-                                          }
-                                    ]
-                              }
-                        ]
+                        "transform-decorators-legacy", "transform-runtime"
                   ]
             },
             "production": {
                   "presets": ["es2015", "stage-0", "react"],
-                  "plugins": ["transform-decorators-legacy"]
+                  "plugins": ["transform-decorators-legacy", "transform-runtime"]
             }
       }
 }

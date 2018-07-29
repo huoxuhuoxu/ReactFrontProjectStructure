@@ -1,6 +1,7 @@
 const HtmlWebpackPlugin =   require('html-webpack-plugin');
 const webpack =             require('webpack');
 const path =                require('path');
+const ET =                  require("extract-text-webpack-plugin");
 const openBrowserWebpackPlugin = require('open-browser-webpack-plugin');
 const config =              require("../config");
 
@@ -31,12 +32,13 @@ const dev = {
             //         'ruby-sass-loader?compass=1'
             //     ]
             // },
-            { 
-                test: /\.css$/, 
-                use: [
-                    { loader: 'style-loader' },
-                    { loader: 'css-loader', options: { modules: true } }
-                ]
+            {
+                test: /\.css$/,
+                loader: ET.extract({ fallback: 'style-loader', use: 'css-loader' })
+                // use: [
+                //     { loader: 'style-loader' },
+                //     { loader: 'css-loader', options: { modules: true } }
+                // ]
             },
             {
                 test: /\.(js|jsx)$/,
@@ -60,6 +62,9 @@ const dev = {
     },
     plugins: [
         new webpack.HotModuleReplacementPlugin(),
+        new ET({
+            filename: "./dist/style.min.[chunkhash:32].css"
+        }),
         new HtmlWebpackPlugin({
             title: config.PAGE_TITLE,
             template: config.PAGE_TIMELATE

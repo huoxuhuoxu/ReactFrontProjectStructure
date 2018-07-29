@@ -42,7 +42,8 @@ const dev = {
                 test: /\.(js|jsx)$/,
                 use: [
                     { loader: 'babel-loader', options: { cacheDirectory: true } }
-                ]
+                ],
+                exclude: /node_modules/
             },
             {
                 test: /\.(png|jpg|jpeg|gif|eot|ttf|woff|woff2|svg|svgz)(\?.+)?$/,

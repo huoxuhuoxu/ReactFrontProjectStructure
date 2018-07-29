@@ -1,5 +1,5 @@
 #### react项目结构初始化
-##### v 2.0.0
+##### v3.0.0
 
 ##### 通过命令行安装
 	sudo npm install react-structure-app -g
@@ -19,13 +19,13 @@
 
 
 ##### 环境依赖
-	webpack	version > 4
+	webpack		version > 4
 	ruby		version > 2 (需要sass/compass才需要此环境)
 	git
 
 ##### public (可以配置) 由 npm run build 打包后生成
 	index.html: 		生产环境的首页
-	dist:				js/css/pic等存放目录, 物理路径为 '/dist'
+	dist:			js/css/pic等存放目录, 物理路径为 '/dist'
 
 ##### static 前端开发目录
 	config: 			项目构建文件
@@ -34,11 +34,11 @@
 	config.js: 			统一配置文件
 	
 ##### config.js
-	PORT: 						webpack热更新服务器使用的开发环境端口号, 默认 8000
-	PUBLIC_NAME: 				对外公开资源目录的名称, 默认 public
+	PORT: 				webpack热更新服务器使用的开发环境端口号, 默认 8000
+	PUBLIC_NAME: 			对外公开资源目录的名称, 默认 public
 	PIC_AND_FONT_LIMIT: 		打包时图片/字体大小的限制, 默认 10000
-	PAGE_TITLE:					页面标题
-	PAGE_TIMELATE:				生成生产环境index.html页面的模版页面
+	PAGE_TITLE:			页面标题
+	PAGE_TIMELATE:			生成生产环境index.html页面的模版页面
 
 ##### config
 	webpack.dev.config.js	开发环境配置
@@ -52,11 +52,10 @@
 	
 ##### src
 	sass: 				scss文件目录
-	lib: 				第三方资源
 	resource: 			图片/字体等资源目录
 	js:
 		modules: 		组件目录
-		tools: 			工具文件目录
+		libs: 			工具文件目录
 			base.js: 	常见问题处理
 		views: 			页面目录
 			router.js: 	路由文件
@@ -66,16 +65,16 @@
 			status.js: 	状态组件文件
 			reducer.js: 	动作处理器文件
 			store.js: 	存储器文件
-	index.html: 		首页
-	cconfig.rb:			npm run sass 的配置文件
+	index.html: 			首页
+	config.rb:			npm run sass 的配置文件
 				
 	
 		
 ##### 指令
 	在项目根目录下执行
 	npm start: 		启用开发服务器, 默认监听 8080 端口
-	npm run build: 	生产环境打包 
-	npm run sass: 	安装ruby/sass/compass环境才能运行,不需要可无视/删除
+	npm run build: 		生产环境打包 
+	npm run sass: 		安装ruby/sass/compass环境才能运行,不需要可无视/删除
 
 
 ##### 访问
@@ -84,15 +83,15 @@
 
 
 ##### 其他
-	.babelrc:			语法转换配置
+	.babelrc:		语法转换配置
 	.eslintrc: 		js格式规范
 	.gitignore: 		过滤提交
-	jsconfig.json:	vs code 配置文件
+	jsconfig.json:		vs code 配置文件
 
 
 ##### 注意
 	js支持：				stage-0(es2015，es2016, es2017, async/await, decorator, do)
-	打包支持: 				js/scss/css/png/jpg/jpeg/gif/eot/ttf/woff/woff2/svg/svgz
+	打包支持: 			js/scss/css/png/jpg/jpeg/gif/eot/ttf/woff/woff2/svg/svgz
 	图片/字体 打包限制:		10000字节 (可配置)
 
 	webpack.dev.config.js 中sass打包注释了,有需要就打开,并且修改sass/main.min.scss内引入子文件的方式

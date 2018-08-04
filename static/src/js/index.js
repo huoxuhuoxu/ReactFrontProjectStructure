@@ -1,4 +1,4 @@
-import "../sass/main.min.css";
+// import "../sass/main.min.css";
 
 import React from 'react';
 import ReactDOM from 'react-dom';

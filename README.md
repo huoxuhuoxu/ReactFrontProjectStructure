@@ -1,5 +1,5 @@
 #### react项目结构初始化
-##### v3.0.0
+##### v3.1.0
 
 ##### 通过命令行安装
 	sudo npm install react-structure-app -g
@@ -43,8 +43,7 @@
 ##### config
 	webpack.dev.config.js	开发环境配置
 	webpack.pro.config.js	生产环境打包配置
-	webpack.dll.config.js	动态链接库生成
-		
+	webpack.dll.config.js	动态链接库配置文件
 	
 	
 ##### script
@@ -73,9 +72,12 @@
 		
 ##### 指令
 	在项目根目录下执行
-	npm start: 		启用开发服务器, 默认监听 8080 端口
+	npm start: 		启用开发服务器, 默认监听 8000 端口
 	npm run build: 		生产环境打包 
+	npm run dll		动态链接库生成
 	npm run sass: 		安装ruby/sass/compass环境才能运行,不需要可无视/删除
+
+	dev、pro 环境运行的js包都依赖于 dll, 在运行 start、build 之前请优先运行 dll
 
 
 ##### 访问

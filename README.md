@@ -43,6 +43,7 @@
 ##### config
 	webpack.dev.config.js	开发环境配置
 	webpack.pro.config.js	生产环境打包配置
+	webpack.dll.config.js	动态链接库生成
 		
 	
 	
@@ -91,7 +92,7 @@
 
 ##### 注意
 	js支持：				stage-0(es2015，es2016, es2017, async/await, decorator, do)
-	打包支持: 			js/scss/css/png/jpg/jpeg/gif/eot/ttf/woff/woff2/svg/svgz
+	打包格式支持: 			js/scss/css/png/jpg/jpeg/gif/eot/ttf/woff/woff2/svg/svgz
 	图片/字体 打包限制:		10000字节 (可配置)
 
 	webpack.dev.config.js 中sass打包注释了,有需要就打开,并且修改sass/main.min.scss内引入子文件的方式

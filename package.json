@@ -6,6 +6,7 @@
   "scripts": {
     "start": "BABEL_ENV=development webpack-dev-server --config static/config/webpack.dev.config.js",
     "build": "BABEL_ENV=production webpack --config static/config/webpack.pro.config.js",
+    "dll": "BABEL_ENV=production webpack --config static/config/webpack.dll.config.js",
     "sass": "cd static/src && compass watch"
   },
   "author": "huoxu_huoxu",
@@ -13,7 +14,8 @@
   "license": "ISC",
   "dependencies": {
     "antd": "^3.7.3",
-    "extract-text-webpack-plugin": "^4.0.0-beta.0",
+    "axios": "^0.18.0",
+    "clean-webpack-plugin": "^0.1.19",
     "lodash": "^4.17.10",
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
@@ -46,6 +48,8 @@
     "webpack-dev-server": "^3.1.5",
     "eslint-plugin-react": "^7.4.0",
     "babel-eslint": "^8.0.1",
-    "loglevel": "^1.4.1"
+    "loglevel": "^1.4.1",
+    "extract-text-webpack-plugin": "^4.0.0-beta.0",
+    "html-webpack-include-assets-plugin": "^1.0.4"
   }
 }

@@ -7,8 +7,5 @@ import App from "./views/router";
 
 ReactDOM.render(
 	<App />, 
-	document.getElementById('app'),
-	() => {
-		console.log('挂载完成');
-	}
+	document.getElementById('app')
 );
